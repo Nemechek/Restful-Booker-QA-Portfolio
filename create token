@@ -1,0 +1,14 @@
+se usa un POST https://restful-booker.herokuapp.com/auth
+en body se utiliza un JSON
+
+{
+    "username" : "admin",
+    "password" : "password123"
+}
+
+
+debe crear un roken con un 200 OK como este ejemplo
+
+{
+    "token": "fa224a54946ba36"
+}
