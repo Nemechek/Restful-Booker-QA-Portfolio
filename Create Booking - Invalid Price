@@ -1,0 +1,29 @@
+se crea un libro utilizando un precio no valido Create Booking - Invalid Price utilizando un POST  https://restful-booker.herokuapp.com/booking
+se agrega en el body un JSON y en headers se asigna Key (Clave): Cookie y Value (Valor): token={{token}}  (Esto le dice a Postman que tome automáticamente el token que guardamos en las variables de entorno en la petición)
+
+{
+    "firstname" : "Ana",
+    "lastname" : "Gomez",
+    "totalprice" : "precio_invalido", 
+    "depositpaid" : false,
+    "bookingdates" : {
+        "checkin" : "2026-06-01",
+        "checkout" : "2026-06-05"
+    }
+}
+
+esta prueba contiene un bug que en lugar de rechazar la petición con un error 400, la aceptó, le asignó un bookingid (3562) y guardó el precio como null.
+
+{
+    "bookingid": 3562,
+    "booking": {
+        "firstname": "Ana",
+        "lastname": "Gomez",
+        "totalprice": null,
+        "depositpaid": false,
+        "bookingdates": {
+            "checkin": "2026-06-01",
+            "checkout": "2026-06-05"
+        }
+    }
+}
