@@ -1,0 +1,30 @@
+# Reporte de Bug: Falta de validación en campo numérico (Total Price)
+
+## 📌 Información General
+* **ID del Bug:** BUG-01
+* **Módulo:** Reservas (`POST /booking`)
+* **Severidad:** Media
+* **Prioridad:** Media
+* **Estado:** Abierto / Detectado
+
+---
+
+## 🔍 Descripción del Problema
+Al enviar una petición `POST` al endpoint `/booking` introduciendo un valor de tipo texto (`"precio_invalido"`) en el campo obligatorio `totalprice` (que debería aceptar exclusivamente valores numéricos), la API **no rechaza la solicitud** con un código de error de cliente (como `400 Bad Request`). En su lugar, procesa la transacción de manera exitosa.
+
+---
+
+## 📋 Pasos para Reproducir
+1. Abrir Postman y cargar el entorno de *Restful-Booker*.
+2. Seleccionar la petición **Create Booking - Invalid Price (Negativo)**.
+3. Enviar el siguiente Body en formato JSON:
+   ```json
+   {
+       "firstname": "Ana",
+       "lastname": "Gomez",
+       "totalprice": "precio_invalido", 
+       "depositpaid": false,
+       "bookingdates": {
+           "checkin": "2026-06-01",
+           "checkout": "2026-06-05"
+       }
