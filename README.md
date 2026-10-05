@@ -24,12 +24,18 @@ Evaluar la estabilidad, la integridad de los datos y el manejo de excepciones de
 ---
 
 ##  4. Estructura del Repositorio
-```text
+
 api-testing-portfolio/
 │
 ├── README.md                              # Documentación del proyecto
 ├── postman/
+
+
 │   ├── Restful-Booker.postman_collection.json  # Colección con tests automatizados
 │   └── Restful-Booker.postman_environment.json # Variables de entorno
 └── reports/
     └── bug_report.md                      # Reporte detallado de hallazgos
+
+
+## 5. Conclusiones y Hallazgos
+La API demuestra un comportamiento estable para flujos estándar (casos positivos). Sin embargo, se identificaron áreas de oportunidad críticas en la validación de esquemas de datos del lado del servidor (como se detalla en el Reporte de Bugs), lo cual demuestra la importancia de contar con una capa robusta de validación de entradas para prevenir la persistencia de datos corruptos.
