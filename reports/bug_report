@@ -28,3 +28,24 @@ Al enviar una petición `POST` al endpoint `/booking` introduciendo un valor de 
            "checkin": "2026-06-01",
            "checkout": "2026-06-05"
        }
+
+Resultados
+Resultado Esperado: La API debe rechazar la solicitud devolviendo un código de estado HTTP 400 Bad Request indicando que el tipo de dato para totalprice es inválido.
+
+Resultado Obtenido: La API responde con un código de éxito (200 OK), genera un bookingid válido y almacena el campo totalprice como null.
+
+Evidencia
+JSON
+{
+    "bookingid": 3562,
+    "booking": {
+        "firstname": "Ana",
+        "lastname": "Gomez",
+        "totalprice": null,
+        "depositpaid": false,
+        "bookingdates": {
+            "checkin": "2026-06-01",
+            "checkout": "2026-06-05"
+        }
+    }
+}
