@@ -1,0 +1,31 @@
+Se crea un libro con un POST  https://restful-booker.herokuapp.com/booking
+en el body se agrega un JSON
+
+{
+    "firstname" : "Jim",
+    "lastname" : "Brown",
+    "totalprice" : 111,
+    "depositpaid" : true,
+    "bookingdates" : {
+        "checkin" : "2026-01-01",
+        "checkout" : "2026-01-05"
+    },
+    "additionalneeds" : "Breakfast"
+}
+
+debe crear el libro asignando un número con un 200 OK como ejemplo siguiente:
+
+{
+    "bookingid": 3613,
+    "booking": {
+        "firstname": "Jim",
+        "lastname": "Brown",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-01-01",
+            "checkout": "2026-01-05"
+        },
+        "additionalneeds": "Breakfast"
+    }
+}
